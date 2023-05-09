@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63ffe204-89ef-4d36-ad80-eef4ba16eed5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BinarySearchTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/BinaryTreeNodeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/BinaryTreeNodeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/BinaryTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/BinaryTreeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +53,23 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="BinaryTreeTest.heightDouble" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ADS1_Assignment2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BinaryTreeTest" />
+      <option name="METHOD_NAME" value="heightDouble" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.BinaryTreeTest.heightDouble" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -106,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683670257626</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="modified private contains(), private findMin/Max() and added insert()">
+      <created>1683674706977</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683674706977</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -116,6 +139,7 @@
     <MESSAGE value="Made adding overwrite previous child" />
     <MESSAGE value="levelOrder, height() and optimized contains()" />
     <MESSAGE value="findMin, findMax and insert()" />
-    <option name="LAST_COMMIT_MESSAGE" value="findMin, findMax and insert()" />
+    <MESSAGE value="modified private contains(), private findMin/Max() and added insert()" />
+    <option name="LAST_COMMIT_MESSAGE" value="modified private contains(), private findMin/Max() and added insert()" />
   </component>
 </project>
