@@ -31,7 +31,8 @@ public class BinaryTree<T> {
     }
 
     public boolean contains(T element) {
-        return false;
+        ArrayList<T> traversed = inOrder();
+        return traversed.contains(element);
     }
 
     public ArrayList<T> inOrder() {
