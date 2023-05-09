@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63ffe204-89ef-4d36-ad80-eef4ba16eed5" name="Changes" comment="levelOrder, height() and optimized contains()">
+    <list default="true" id="63ffe204-89ef-4d36-ad80-eef4ba16eed5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BinarySearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BinaryTree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683669933239</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="findMin, findMax and insert()">
+      <created>1683670257626</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1683670257626</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -106,6 +115,7 @@
     <MESSAGE value="contains()" />
     <MESSAGE value="Made adding overwrite previous child" />
     <MESSAGE value="levelOrder, height() and optimized contains()" />
-    <option name="LAST_COMMIT_MESSAGE" value="levelOrder, height() and optimized contains()" />
+    <MESSAGE value="findMin, findMax and insert()" />
+    <option name="LAST_COMMIT_MESSAGE" value="findMin, findMax and insert()" />
   </component>
 </project>

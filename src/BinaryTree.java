@@ -28,24 +28,29 @@ public class BinaryTree<T> {
             return false;
         }
 
-        return contains(element, root);
+        var found = findWithParent(element, root, null);
+        return found.size() != 0;
     }
 
-    private boolean contains(T element, BinaryTreeNode<T> node) {
-        if (node.getElement().equals(element))
-            return true;
+    protected ArrayList<BinaryTreeNode<T>> findWithParent(T element, BinaryTreeNode<T> node, BinaryTreeNode<T> parent) {
+        ArrayList<BinaryTreeNode<T>> out = new ArrayList<>(); // node, parent
+        if (node.getElement().equals(element)) {
+            out.add(node);
+            out.add(parent);
+            return out;
+        }
 
         BinaryTreeNode<T> left = node.getLeftChild();
         BinaryTreeNode<T> right = node.getRightChild();
         // idk how to compare for unspecified types
         if (element > node.getElement() && right != null) {
-            return contains(element, right);
+            return findWithParent(element, right, node);
         }
         if (element < node.getElement() && left != null) {
-            return contains(element, left);
+            return findWithParent(element, left, node);
         }
 
-        return false;
+        return out;
     }
 
     public ArrayList<T> inOrder() {
