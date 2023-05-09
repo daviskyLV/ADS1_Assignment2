@@ -1,7 +1,7 @@
 public class BinaryTreeNode<T> {
     private T element;
-    private BinaryTreeNode leftChild;
-    private BinaryTreeNode rightChild;
+    private BinaryTreeNode<T> leftChild;
+    private BinaryTreeNode<T> rightChild;
 
     public BinaryTreeNode(T element) {
         this.element = element;
@@ -15,7 +15,7 @@ public class BinaryTreeNode<T> {
         return element;
     }
 
-    public void addLeftChild(BinaryTreeNode child) {
+    public void addLeftChild(BinaryTreeNode<T> child) {
         if (leftChild != null) {
             leftChild.addLeftChild(child);
             return;
@@ -23,7 +23,7 @@ public class BinaryTreeNode<T> {
         leftChild = child;
     }
 
-    public void addRightChild(BinaryTreeNode child) {
+    public void addRightChild(BinaryTreeNode<T> child) {
         if (rightChild != null) {
             rightChild.addRightChild(child);
             return;
@@ -31,11 +31,11 @@ public class BinaryTreeNode<T> {
         rightChild = child;
     }
 
-    public BinaryTreeNode getLeftChild() {
+    public BinaryTreeNode<T> getLeftChild() {
         return leftChild;
     }
 
-    public BinaryTreeNode getRightChild() {
+    public BinaryTreeNode<T> getRightChild() {
         return rightChild;
     }
 }

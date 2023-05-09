@@ -21,7 +21,13 @@ public class BinaryTree<T> {
     }
 
     public int size() {
-        return 0;
+        if (getRoot() == null) {
+            return 0;
+        }
+
+        ArrayList<T> elems = new ArrayList<>();
+        inOrder(root, elems);
+        return elems.size();
     }
 
     public boolean contains(T element) {
@@ -29,15 +35,56 @@ public class BinaryTree<T> {
     }
 
     public ArrayList<T> inOrder() {
-        return null;
+        ArrayList<T> traversedElements = new ArrayList<>();
+        if (getRoot() == null) {
+            return traversedElements;
+        }
+
+        inOrder(root, traversedElements);
+        return traversedElements;
+    }
+
+    private void inOrder(BinaryTreeNode<T> node, ArrayList<T> outputArray) {
+        BinaryTreeNode<T> left = node.getLeftChild();
+        BinaryTreeNode<T> right = node.getRightChild();
+
+        if (left != null) {inOrder(left, outputArray);}
+        outputArray.add(node.getElement());
+        if (right != null) {inOrder(right, outputArray);}
     }
 
     public ArrayList<T> preOrder() {
-        return null;
+        ArrayList<T> traversedElements = new ArrayList<>();
+        if (getRoot() == null) {return traversedElements;}
+
+        preOrder(root, traversedElements);
+        return traversedElements;
+    }
+
+    private void preOrder(BinaryTreeNode<T> node, ArrayList<T> outputArray) {
+        BinaryTreeNode<T> left = node.getLeftChild();
+        BinaryTreeNode<T> right = node.getRightChild();
+
+        outputArray.add(node.getElement());
+        if (left != null) {preOrder(left, outputArray);}
+        if (right != null) {preOrder(right, outputArray);}
     }
 
     public ArrayList<T> postOrder() {
-        return null;
+        ArrayList<T> traversedElements = new ArrayList<>();
+        if (getRoot() == null) {return traversedElements;}
+
+        postOrder(root, traversedElements);
+        return traversedElements;
+    }
+
+    private void postOrder(BinaryTreeNode<T> node, ArrayList<T> outputArray) {
+        BinaryTreeNode<T> left = node.getLeftChild();
+        BinaryTreeNode<T> right = node.getRightChild();
+
+        if (left != null) {postOrder(left, outputArray);}
+        if (right != null) {postOrder(right, outputArray);}
+        outputArray.add(node.getElement());
     }
 
     public ArrayList<T> levelOrder() {
