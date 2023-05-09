@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class BinaryTree<T> {
     protected BinaryTreeNode<T> root;
-    protected int height = -1;
 
     public BinaryTree() {
         this.root = null;
@@ -21,18 +20,32 @@ public class BinaryTree<T> {
     }
 
     public int size() {
-        if (getRoot() == null) {
-            return 0;
-        }
-
-        ArrayList<T> elems = new ArrayList<>();
-        inOrder(root, elems);
-        return elems.size();
+        return inOrder().size();
     }
 
     public boolean contains(T element) {
-        ArrayList<T> traversed = inOrder();
-        return traversed.contains(element);
+        if (getRoot() == null) {
+            return false;
+        }
+
+        return contains(element, root);
+    }
+
+    private boolean contains(T element, BinaryTreeNode<T> node) {
+        if (node.getElement().equals(element))
+            return true;
+
+        BinaryTreeNode<T> left = node.getLeftChild();
+        BinaryTreeNode<T> right = node.getRightChild();
+        // idk how to compare for unspecified types
+        if (element > node.getElement() && right != null) {
+            return contains(element, right);
+        }
+        if (element < node.getElement() && left != null) {
+            return contains(element, left);
+        }
+
+        return false;
     }
 
     public ArrayList<T> inOrder() {
@@ -89,10 +102,48 @@ public class BinaryTree<T> {
     }
 
     public ArrayList<T> levelOrder() {
-        return null;
+        ArrayList<T> traversedElements = new ArrayList<>();
+        if (root == null) {
+            return traversedElements;
+        }
+
+        ArrayList<BinaryTreeNode<T>> nodes = new ArrayList<>();
+        nodes.add(root);
+        for (var node: nodes) {
+            traversedElements.add(node.getElement());
+            var nextNodes = levelOrder(node);
+            if (nextNodes.get(0) != null) {nodes.add(nextNodes.get(0));}
+            if (nextNodes.get(1) != null) {nodes.add(nextNodes.get(1));}
+        }
+
+        return traversedElements;
+    }
+
+    private ArrayList<BinaryTreeNode<T>> levelOrder(BinaryTreeNode<T> node) {
+        ArrayList<BinaryTreeNode<T>> out = new ArrayList<>();
+        out.add(node.getLeftChild());
+        out.add(node.getRightChild());
+        return out;
     }
 
     public int height() {
-        return height;
+        if (root == null) {return -1;}
+
+        return getHeight(root,0);
+    }
+
+    private int getHeight(BinaryTreeNode<T> node, int curHeight) {
+        BinaryTreeNode<T> left = node.getLeftChild();
+        BinaryTreeNode<T> right = node.getRightChild();
+        int leftH = curHeight;
+        int rightH = curHeight;
+
+        if (left != null) {
+            leftH = getHeight(left, curHeight+1);
+        }
+        if (right != null) {
+            rightH = getHeight(right, curHeight+1);
+        }
+        return Math.max(leftH, rightH);
     }
 }
