@@ -16,18 +16,10 @@ public class BinaryTreeNode<T> {
     }
 
     public void addLeftChild(BinaryTreeNode<T> child) {
-        if (leftChild != null) {
-            leftChild.addLeftChild(child);
-            return;
-        }
         leftChild = child;
     }
 
     public void addRightChild(BinaryTreeNode<T> child) {
-        if (rightChild != null) {
-            rightChild.addRightChild(child);
-            return;
-        }
         rightChild = child;
     }
 
