@@ -8,12 +8,14 @@ class BinaryTreeTest {
     private BinaryTree<Integer> tree;
     private BinaryTreeNode<Integer> node;
     private BinaryTreeNode<Integer> node2;
+    private BinaryTreeNode<Integer> node3;
 
     @BeforeEach
     void setUp() {
         tree = new BinaryTree<>();
         node = new BinaryTreeNode<>(16);
         node2 = new BinaryTreeNode<>(25);
+        node3 = new BinaryTreeNode<>(100);
     }
 
     @AfterEach
@@ -21,6 +23,7 @@ class BinaryTreeTest {
         tree = null;
         node = null;
         node2 = null;
+        node3 = null;
     }
 
     @Test
@@ -74,14 +77,53 @@ class BinaryTreeTest {
 
     @Test
     void inOrder() {
+        tree.setRoot(node);
+        node.addRightChild(node2);
+        node.addLeftChild(node3);
+        var ordering = tree.inOrder();
+        assertEquals(3, ordering.size());
+        assertEquals(100, ordering.get(0));
+        assertEquals(25, ordering.get(1));
+        assertEquals(16, ordering.get(2));
+    }
+
+    @Test
+    void inOrderEmpty() {
+        assertEquals(0, tree.inOrder().size());
     }
 
     @Test
     void preOrder() {
+        tree.setRoot(node);
+        node.addRightChild(node2);
+        node.addLeftChild(node3);
+        var ordering = tree.preOrder();
+        assertEquals(3, ordering.size());
+        assertEquals(16, ordering.get(0));
+        assertEquals(100, ordering.get(1));
+        assertEquals(25, ordering.get(2));
+    }
+
+    @Test
+    void preOrderEmpty() {
+        assertEquals(0, tree.preOrder().size());
     }
 
     @Test
     void postOrder() {
+        tree.setRoot(node);
+        node.addRightChild(node2);
+        node.addLeftChild(node3);
+        var ordering = tree.postOrder();
+        assertEquals(3, ordering.size());
+        assertEquals(100, ordering.get(0));
+        assertEquals(25, ordering.get(1));
+        assertEquals(16, ordering.get(2));
+    }
+
+    @Test
+    void postOrderEmpty() {
+        assertEquals(0, tree.postOrder().size());
     }
 
     @Test
